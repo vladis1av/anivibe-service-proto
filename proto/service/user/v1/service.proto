@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package user.v1;
+
+option go_package = "github.com/vladis1av/anivibe-service-proto/gen/go/service/user/v1;pb_user";
+
+import "proto/common/filter/v1/filter.proto";
+import "proto/model/user/v1/user.proto";
+
+service UserService {
+  rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
+  rpc AllUsers (AllUsersRequest) returns (AllUsersResponse);
+}
+
+message CreateUserRequest {
+  string firstName = 1;
+  string lastName = 2;
+  string login = 3;
+  string password = 4;
+  string email = 5;
+  string gender = 6;
+  string birthday = 7;
+}
+
+message CreateUserResponse {
+  model.user.v1.User user = 1;
+}
+
+message AllUsersRequest {
+  common.filter.v1.Pagination pagination = 1;
+  common.filter.v1.StringFieldFilter firstName = 2;
+  common.filter.v1.StringFieldFilter lastName = 3;
+  common.filter.v1.StringFieldFilter login = 4;
+  common.filter.v1.StringFieldFilter email = 5;
+}
+
+message AllUsersResponse {
+  repeated model.user.v1.User users = 1;
+}

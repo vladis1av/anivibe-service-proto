@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package model.image.v1;
+
+option go_package = "github.com/vladis1av/anivibe-service-proto/gen/go/model/image/v1;pb_image";
+
+message Image  {
+  string jpg = 1;
+	string webp = 2;
+}

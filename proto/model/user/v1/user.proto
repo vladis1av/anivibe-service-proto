@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package model.user.v1;
+
+option go_package = "github.com/vladis1av/anivibe-service-proto/gen/go/model/user/v1;pb_user";
+
+import "proto/model/image/v1/image.proto";
+
+message User  {
+  string id = 1;
+	string firstName = 2;
+	string lastName = 3;
+	string login = 4;
+	string password = 5;
+	string email = 6;
+	string gender = 7;
+	string role = 8;
+	model.image.v1.Image avatar = 9;
+	model.image.v1.Image profileBackground = 10;
+	string isDeleted = 11;
+	string birthday = 12;
+	uint64 createdAt = 13;
+  uint64 updatedAt = 14;
+}

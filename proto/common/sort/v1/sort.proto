@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package common.sort.v1;
+
+option go_package = "github.com/vladis1av/anivibe-service-proto/gen/go/common/sort/v1;pb_sort";
+
+// Sorting array
+message Sort {
+  string field = 1;
+}
