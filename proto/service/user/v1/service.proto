@@ -13,13 +13,13 @@ service UserService {
 }
 
 message CreateUserRequest {
-  string firstName = 1;
-  string lastName = 2;
+  optional string firstName = 1;
+  optional string lastName = 2;
   string login = 3;
   string password = 4;
   string email = 5;
-  string gender = 6;
-  string birthday = 7;
+  optional string gender = 6;
+  optional string birthday = 7;
 }
 
 message CreateUserResponse {
