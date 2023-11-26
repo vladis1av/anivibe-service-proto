@@ -20,6 +20,7 @@ generate_grpc_go:
  	--go_opt=module=$(REPOSITORY_GEN_FOLDER) \
 	--go-grpc_out=$(GEN_FOLDER) \
  	--go-grpc_opt=module=$(REPOSITORY_GEN_FOLDER) \
- 	$(PROTO_FILES)
+ 	$(PROTO_FILES) \
+	--experimental_allow_proto3_optional
 
 init_go: create_gen_folder generate_grpc_go go_mod_init
