@@ -5,6 +5,8 @@ package user.v1;
 option go_package = "github.com/vladis1av/anivibe-service-proto/gen/go/service/user/v1;pb_user";
 
 import "proto/common/filter/v1/filter.proto";
+import "proto/common/sort/v1/sort.proto";
+
 import "proto/model/user/v1/user.proto";
 
 service UserService {
@@ -32,6 +34,7 @@ message AllUsersRequest {
   common.filter.v1.StringFieldFilter lastName = 3;
   common.filter.v1.StringFieldFilter login = 4;
   common.filter.v1.StringFieldFilter email = 5;
+  common.sort.v1.Sort sort = 6;
 }
 
 message AllUsersResponse {
